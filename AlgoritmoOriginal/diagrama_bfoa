@@ -1,0 +1,29 @@
+// Diagrama de Flujo del BFOA Mejorado
+digraph {
+	node [color=lightblue fontname=Arial fontsize=12 shape=rectangle style=filled]
+	A [label=Inicio shape=ellipse]
+	B [label="Inicializar Población" shape=box]
+	C [label="Movimiento Aleatorio" shape=box]
+	D [label="Evaluar Fitness" shape=box]
+	E [label=Quimiotaxis shape=box]
+	F [label="¿Mejora en Fitness?" shape=diamond]
+	G [label="Actualizar Posición y Reproducir" shape=box]
+	H [label="Eliminar Bacteria" shape=box]
+	I [label="Actualizar Global NFE" shape=box]
+	J [label="¿Número de Iteraciones Alcanzado?" shape=diamond]
+	K [label="Imprimir Resultados" shape=box]
+	L [label=Fin shape=ellipse]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G [label="Sí"]
+	F -> H [label=No]
+	G -> I
+	H -> I
+	I -> J
+	J -> C [label=No]
+	J -> K [label="Sí"]
+	K -> L
+}
